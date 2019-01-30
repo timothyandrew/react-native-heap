@@ -59,14 +59,56 @@ export default Package.create({
           componentThis.state.touchable &&
           componentThis.state.touchable.touchState;
 
+        const targetText = getTargetText(componentThis._reactInternalFiber);
+
         track(eventType, {
           touchableHierarchy,
           touchState,
+          targetText,
         });
       },
     };
   },
 });
+
+const getTargetText = fiberNode => {
+  let targetText = '';
+  let currNode = fiberNode;
+  // Walk up the fiber hierarchy until the current node has a non-empty inner text.
+  // :TODO: (jmtaber129): This can be potentially expensive for large/complex hierarchies. We should
+  // limit the number of levels we walk up the hierarchy.
+  // :TODO: (jmtaber129): Consider optimizing this by skipping nodes where there are no new
+  // children since the last node. The next node will yield the same inner text when the next node
+  // only has one child (the current node).
+  while (targetText === '' && currNode) {
+    targetText = getInnerTargetText(currNode);
+    currNode = currNode.return;
+  }
+  return targetText;
+}
+
+const getInnerTargetText = fiberNode => {
+  if (fiberNode.elementType === 'RCTText') {
+    return fiberNode.memoizedProps.children;
+  }
+
+  if (fiberNode.child === null) {
+    return '';
+  }
+
+  const children = [];
+  let currChild = fiberNode.child;
+  while (currChild) {
+    children.push(currChild);
+    currChild = currChild.sibling;
+  }
+
+  let targetText = '';
+  children.forEach(child => {
+    targetText = (targetText + ' ' + getInnerTargetText(child)).trim();
+  });
+  return targetText;
+}
 
 const getComponentHierarchy = (componentThis) => {
   // :TODO: (jmtaber129): Remove this if/when we support pre-fiber React.
