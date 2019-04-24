@@ -209,6 +209,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				347B4380528F227E831E33B1 /* [CP] Embed Pods Frameworks */,
+				D246E64D7129F8A152AB0AA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,7 +394,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TestDriver/Pods-TestDriver-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TestDriver/Pods-TestDriver-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
 				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
 				"${BUILT_PRODUCTS_DIR}/RNGestureHandler/RNGestureHandler.framework",
@@ -414,7 +415,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestDriver/Pods-TestDriver-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestDriver/Pods-TestDriver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D246E64D7129F8A152AB0AA6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestDriver/Pods-TestDriver-resources.sh",
+				"${PODS_ROOT}/../../node_modules/@heap/react-native-heap/ios/HeapSettings/HeapSettings.plist",
+				"${PODS_CONFIGURATION_BUILD_DIR}/react-native-heap/HeapSettings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HeapSettings.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HeapSettings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestDriver/Pods-TestDriver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E5F03DDBB7275D0F8105EA52 /* [CP] Check Pods Manifest.lock */ = {

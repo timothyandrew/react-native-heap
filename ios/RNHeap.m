@@ -11,7 +11,7 @@
 RCT_EXPORT_MODULE();
 
 static BOOL pageViewSent = NO;
-static BOOL appIdSet = NO;
+static BOOL appIdSet = YES;
 
 - (dispatch_queue_t)methodQueue {
   return dispatch_get_main_queue();

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21C146AB224AEB1500764BE4 /* libHeap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E7F364224444E700270330 /* libHeap.a */; };
+		22517D0C2270BABE00A960E2 /* RNHeapInit.m in Sources */ = {isa = PBXBuildFile; fileRef = 22517D0A2270BABD00A960E2 /* RNHeapInit.m */; };
 		4DE526AA1ECD4A340059312E /* RNHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE526A91ECD4A340059312E /* RNHeap.m */; };
 /* End PBXBuildFile section */
 
@@ -15,6 +16,8 @@
 		112EE36D1CC0AB8A00BF6BB8 /* libRNHeap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNHeap.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E7F364224444E700270330 /* libHeap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libHeap.a; sourceTree = "<group>"; };
 		21E7F365224444EA00270330 /* Heap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Heap.h; sourceTree = "<group>"; };
+		22517D0A2270BABD00A960E2 /* RNHeapInit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHeapInit.m; sourceTree = "<group>"; };
+		22517D0B2270BABD00A960E2 /* RNHeapInit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHeapInit.h; sourceTree = "<group>"; };
 		4DE526A81ECD4A340059312E /* RNHeap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNHeap.h; sourceTree = "<group>"; };
 		4DE526A91ECD4A340059312E /* RNHeap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNHeap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -34,6 +37,8 @@
 		112EE3641CC0AB8A00BF6BB8 = {
 			isa = PBXGroup;
 			children = (
+				22517D0B2270BABD00A960E2 /* RNHeapInit.h */,
+				22517D0A2270BABD00A960E2 /* RNHeapInit.m */,
 				4DE526A81ECD4A340059312E /* RNHeap.h */,
 				4DE526A91ECD4A340059312E /* RNHeap.m */,
 				21E7F5372249537B00270330 /* Vendor */,
@@ -123,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE526AA1ECD4A340059312E /* RNHeap.m in Sources */,
+				22517D0C2270BABE00A960E2 /* RNHeapInit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
